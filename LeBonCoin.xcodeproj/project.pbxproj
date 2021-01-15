@@ -27,6 +27,10 @@
 		673B810625B1A09200AF4A9A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B810525B1A09200AF4A9A /* EndPoint.swift */; };
 		673B810825B1A0A600AF4A9A /* GenericAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B810725B1A0A600AF4A9A /* GenericAPIClient.swift */; };
 		673B810B25B1A19A00AF4A9A /* AdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B810A25B1A19A00AF4A9A /* AdClientTests.swift */; };
+		673B810E25B1A9F700AF4A9A /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B810D25B1A9F700AF4A9A /* AdCell.swift */; };
+		673B811125B1AAC100AF4A9A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811025B1AAC100AF4A9A /* UIView+Extensions.swift */; };
+		673B811325B1AD7A00AF4A9A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811225B1AD7A00AF4A9A /* String+Extensions.swift */; };
+		673B811525B1ADA000AF4A9A /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811425B1ADA000AF4A9A /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		673B810525B1A09200AF4A9A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		673B810725B1A0A600AF4A9A /* GenericAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPIClient.swift; sourceTree = "<group>"; };
 		673B810A25B1A19A00AF4A9A /* AdClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdClientTests.swift; sourceTree = "<group>"; };
+		673B810D25B1A9F700AF4A9A /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		673B811025B1AAC100AF4A9A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		673B811225B1AD7A00AF4A9A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		673B811425B1ADA000AF4A9A /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 				67090E5825B0F26F00313B11 /* LeBonCoin */,
 				673B80B225B0F94900AF4A9A /* Coordinators */,
 				673B80B525B0F9D800AF4A9A /* Controllers */,
+				673B810F25B1AA9F00AF4A9A /* Utilities */,
 				673B80E925B1093600AF4A9A /* LeBonCoinTest */,
 				67090E5725B0F26F00313B11 /* Products */,
 			);
@@ -134,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				673B80B625B0FA0600AF4A9A /* AdListViewController.swift */,
+				673B810C25B1A82800AF4A9A /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +212,24 @@
 				673B810A25B1A19A00AF4A9A /* AdClientTests.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		673B810C25B1A82800AF4A9A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				673B810D25B1A9F700AF4A9A /* AdCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		673B810F25B1AA9F00AF4A9A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				673B811025B1AAC100AF4A9A /* UIView+Extensions.swift */,
+				673B811225B1AD7A00AF4A9A /* String+Extensions.swift */,
+				673B811425B1ADA000AF4A9A /* UIImageView+Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,12 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673B811525B1ADA000AF4A9A /* UIImageView+Extensions.swift in Sources */,
+				673B810E25B1A9F700AF4A9A /* AdCell.swift in Sources */,
 				67090E5E25B0F26F00313B11 /* ViewController.swift in Sources */,
 				673B810425B1A07300AF4A9A /* AdClient.swift in Sources */,
 				673B810625B1A09200AF4A9A /* EndPoint.swift in Sources */,
 				673B80B425B0F9A000AF4A9A /* MainCoordinator.swift in Sources */,
+				673B811125B1AAC100AF4A9A /* UIView+Extensions.swift in Sources */,
 				673B80BA25B0FF8700AF4A9A /* Ad.swift in Sources */,
 				673B80BC25B0FF9D00AF4A9A /* AdCategory.swift in Sources */,
+				673B811325B1AD7A00AF4A9A /* String+Extensions.swift in Sources */,
 				67090E5A25B0F26F00313B11 /* AppDelegate.swift in Sources */,
 				673B810125B1A02600AF4A9A /* AdListViewModel.swift in Sources */,
 				673B80B725B0FA0600AF4A9A /* AdListViewController.swift in Sources */,
