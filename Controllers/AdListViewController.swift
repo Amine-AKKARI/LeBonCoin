@@ -11,10 +11,15 @@ import UIKit
 class AdListViewController: UIViewController {
 
     weak var coordinator: MainCoordinator?
+    var adListViewModel: AdListViewModel!
     let tableView = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        let client = AdClient()
+        adListViewModel = AdListViewModel(adClient: client)
+        adListViewModel.configureAdListViewModel()
+        closureSetup ()
     }
     /// configure tableview
     func configureTableView () {
@@ -31,6 +36,15 @@ class AdListViewController: UIViewController {
         ])
         tableView.register(AdCell.self, forCellReuseIdentifier: "AdCell")
     }
+    
+    /// execute closure to update View with ViwModel
+    func closureSetup() {
+        adListViewModel.reloadList = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK - UITableView data source
@@ -40,11 +54,11 @@ extension AdListViewController: UITableViewDelegate, UITableViewDataSource {
         return 120
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return adListViewModel.adsViewModel.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdCell", for: indexPath) as! AdCell
-        cell.configureCell()
+        cell.configureCell(viewModel: adListViewModel.adsViewModel[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

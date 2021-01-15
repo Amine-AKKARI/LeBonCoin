@@ -119,15 +119,19 @@ class AdCell: UITableViewCell {
         ])
     }
     
-    func configureCell() {
-        adImageView.backgroundColor = .red
-        adCategoryLabel.text = "category"
-        adTitleLabel.text = "title"
-        adPriceLabel.text = "label"
-        adStatusLabel.text = "state"
-        adCreationDateLabel.text = "date"
+    /**
+       Configure Cell with viewModel
+       - Parameter viewModel: ViewModel.
+     */
+    func configureCell(viewModel: AdViewModel) {
+        adImageView.loadImageUsingCacheWithURLString(viewModel.smallImageUrl, placeHolder: UIImage(named: "placeholder"))
+        adCategoryLabel.text = viewModel.categoryName
+        adTitleLabel.text = viewModel.title
+        adPriceLabel.text = viewModel.price
+        adStatusLabel.text = viewModel.state
+        adCreationDateLabel.text = viewModel.creationDate
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
