@@ -27,6 +27,8 @@ class MainCoordinator: Coordinator {
     func start() {
         presenter = AdListViewController()
         presenter.coordinator = self
+        navigationController.navigationBar.barTintColor = UIColor(red: 1.0, green: 0.43, blue: 0.086, alpha: 1)
+        navigationController.navigationBar.tintColor = .white
         navigationController.pushViewController(presenter, animated: false)
     }
     
@@ -48,5 +50,16 @@ class MainCoordinator: Coordinator {
     */
     func dismissSelectCategortVC (vc: UIViewController ) {
         vc.dismiss(animated: true, completion: nil)
+    }
+    
+    /**
+     Show AdDetailsViewController
+     - Parameter adViewModel: adViewModel
+     */
+    func showAdDetailsVC (adViewModel: AdViewModel) {
+        let vc = AdDetailsViewController()
+        vc.coordinator = self
+        vc.adViewModel = adViewModel
+        navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -35,6 +35,7 @@
 		673B811A25B1C63A00AF4A9A /* AdViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811925B1C63A00AF4A9A /* AdViewModelTests.swift */; };
 		673B811C25B1C8C900AF4A9A /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */; };
 		673B811F25B1CE4100AF4A9A /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811E25B1CE4100AF4A9A /* CoordinatorTests.swift */; };
+		673B814525B2083900AF4A9A /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B814425B2083900AF4A9A /* AdDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		673B811925B1C63A00AF4A9A /* AdViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewModelTests.swift; sourceTree = "<group>"; };
 		673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
 		673B811E25B1CE4100AF4A9A /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		673B814425B2083900AF4A9A /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				673B80B625B0FA0600AF4A9A /* AdListViewController.swift */,
 				673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */,
+				673B814425B2083900AF4A9A /* AdDetailsViewController.swift */,
 				673B810C25B1A82800AF4A9A /* Cells */,
 			);
 			path = Controllers;
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				673B811525B1ADA000AF4A9A /* UIImageView+Extensions.swift in Sources */,
+				673B814525B2083900AF4A9A /* AdDetailsViewController.swift in Sources */,
 				673B810E25B1A9F700AF4A9A /* AdCell.swift in Sources */,
 				673B811C25B1C8C900AF4A9A /* SelectCategoryViewController.swift in Sources */,
 				67090E5E25B0F26F00313B11 /* ViewController.swift in Sources */,

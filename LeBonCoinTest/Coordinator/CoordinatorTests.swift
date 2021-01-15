@@ -43,5 +43,15 @@ class CoordinatorTests: XCTestCase {
             return
         }
     }
+    
+    func test_TopViewController_WhenShowDetailsVC_ThenShowDetailsVCPushed () {
+        let ad = Ad(advertisementId: 1461267313, categoryId: 4, title:"ad title" , description: "ad description", imagesUrl: ImagesUrl(small: "", thumb: ""), price: 10, creationDate: "2019-11-05T15:56:59+0000", isUrgent: true)
+        let adViewModel = AdViewModel(ad: ad, categoryName: "Maison")
+        coordinator.showAdDetailsVC(adViewModel: adViewModel)
+        guard let _ =  coordinator.navigationController.topViewController as? AdDetailsViewController else {
+            XCTFail()
+            return
+        }
+    }
 }
 

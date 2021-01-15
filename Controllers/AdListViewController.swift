@@ -73,6 +73,6 @@ extension AdListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        coordinator?.showAdDetailsVC(adViewModel: adListViewModel.adsViewModel[indexPath.row])
     }
 }
