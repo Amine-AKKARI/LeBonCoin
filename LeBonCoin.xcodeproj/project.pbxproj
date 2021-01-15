@@ -33,6 +33,8 @@
 		673B811525B1ADA000AF4A9A /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811425B1ADA000AF4A9A /* UIImageView+Extensions.swift */; };
 		673B811825B1C60700AF4A9A /* AdListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811725B1C60700AF4A9A /* AdListViewModelTests.swift */; };
 		673B811A25B1C63A00AF4A9A /* AdViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811925B1C63A00AF4A9A /* AdViewModelTests.swift */; };
+		673B811C25B1C8C900AF4A9A /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */; };
+		673B811F25B1CE4100AF4A9A /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673B811E25B1CE4100AF4A9A /* CoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		673B811425B1ADA000AF4A9A /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		673B811725B1C60700AF4A9A /* AdListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdListViewModelTests.swift; sourceTree = "<group>"; };
 		673B811925B1C63A00AF4A9A /* AdViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewModelTests.swift; sourceTree = "<group>"; };
+		673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		673B811E25B1CE4100AF4A9A /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				673B80B625B0FA0600AF4A9A /* AdListViewController.swift */,
+				673B811B25B1C8C900AF4A9A /* SelectCategoryViewController.swift */,
 				673B810C25B1A82800AF4A9A /* Cells */,
 			);
 			path = Controllers;
@@ -164,6 +169,7 @@
 		673B80E925B1093600AF4A9A /* LeBonCoinTest */ = {
 			isa = PBXGroup;
 			children = (
+				673B811D25B1CDEB00AF4A9A /* Coordinator */,
 				673B811625B1C56B00AF4A9A /* ViewModel */,
 				673B810925B1A16600AF4A9A /* Networking */,
 				673B80F825B109FD00AF4A9A /* Utilities */,
@@ -244,6 +250,14 @@
 				673B811925B1C63A00AF4A9A /* AdViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		673B811D25B1CDEB00AF4A9A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				673B811E25B1CE4100AF4A9A /* CoordinatorTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +366,7 @@
 			files = (
 				673B811525B1ADA000AF4A9A /* UIImageView+Extensions.swift in Sources */,
 				673B810E25B1A9F700AF4A9A /* AdCell.swift in Sources */,
+				673B811C25B1C8C900AF4A9A /* SelectCategoryViewController.swift in Sources */,
 				67090E5E25B0F26F00313B11 /* ViewController.swift in Sources */,
 				673B810425B1A07300AF4A9A /* AdClient.swift in Sources */,
 				673B810625B1A09200AF4A9A /* EndPoint.swift in Sources */,
@@ -373,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				673B80F425B1098600AF4A9A /* AdCategoryResponseTest.swift in Sources */,
+				673B811F25B1CE4100AF4A9A /* CoordinatorTests.swift in Sources */,
 				673B810B25B1A19A00AF4A9A /* AdClientTests.swift in Sources */,
 				673B811825B1C60700AF4A9A /* AdListViewModelTests.swift in Sources */,
 				673B811A25B1C63A00AF4A9A /* AdViewModelTests.swift in Sources */,

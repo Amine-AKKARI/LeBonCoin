@@ -16,6 +16,7 @@ class AdListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureFilterButton()
         let client = AdClient()
         adListViewModel = AdListViewModel(adClient: client)
         adListViewModel.configureAdListViewModel()
@@ -37,6 +38,16 @@ class AdListViewController: UIViewController {
         tableView.register(AdCell.self, forCellReuseIdentifier: "AdCell")
     }
     
+    /// configure Filtre button
+    func configureFilterButton () {
+        let filterButton = UIBarButtonItem(title: "Filtrer", style: .plain, target: self, action: #selector(presentSelectCategoryVC))
+        self.navigationItem.rightBarButtonItem  = filterButton
+    }
+    
+    /// Present SelectCategoryViewController
+    @objc func presentSelectCategoryVC (){
+        coordinator?.presentSelectCategoryVC(categories: adListViewModel.categories)
+    }
     /// execute closure to update View with ViwModel
     func closureSetup() {
         adListViewModel.reloadList = { [weak self] () in

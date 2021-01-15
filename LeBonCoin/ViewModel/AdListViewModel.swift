@@ -161,3 +161,15 @@ extension AdListViewModel {
     }
 }
 
+// MARK: - SelectCategoryDelegate
+extension AdListViewModel: SelectCategoryDelegate {
+    func didSelectcategory(category: AdCategory) {
+        self.adsViewModel = self.copyAdViewModel
+        if (category.categoryId != 0) {
+            self.adsViewModel = self.adsViewModel.filter {adViewModel in
+                return adViewModel.categoryName == category.categoryName
+            }
+        }
+    }
+}
+

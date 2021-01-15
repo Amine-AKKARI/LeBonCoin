@@ -26,6 +26,27 @@ class MainCoordinator: Coordinator {
 
     func start() {
         presenter = AdListViewController()
+        presenter.coordinator = self
         navigationController.pushViewController(presenter, animated: false)
+    }
+    
+    /**
+     Present SelectCategoryViewController
+     - Parameter categories: [AdCategories] Array of categories
+     */
+    func presentSelectCategoryVC(categories: [AdCategory]) {
+        let vc = SelectCategoryViewController()
+        vc.coordinator = self
+        vc.delegate = presenter.adListViewModel
+        vc.categories = categories
+        let navController = UINavigationController(rootViewController: vc)
+        presenter.present(navController, animated:true, completion: nil)
+    }
+    /**
+    Dismiss View Controller
+    - Parameter vc: UIViewController ViewController to dismiss
+    */
+    func dismissSelectCategortVC (vc: UIViewController ) {
+        vc.dismiss(animated: true, completion: nil)
     }
 }
