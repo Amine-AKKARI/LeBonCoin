@@ -110,12 +110,11 @@ class AdDetailsViewController: UIViewController {
     
     /// Setup Constraints
     func setupConstraints () {
-        let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            scrollView.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
-            scrollView.heightAnchor.constraint(equalTo: safeArea.heightAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor),
         ])
         
         NSLayoutConstraint.activate([
@@ -130,7 +129,7 @@ class AdDetailsViewController: UIViewController {
         NSLayoutConstraint.activate([
             adImageView.topAnchor.constraint(equalTo: hostingView.topAnchor, constant: padding),
             adImageView.centerXAnchor.constraint(equalTo: hostingView.centerXAnchor),
-            adImageView.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.5),
+            adImageView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5),
             adImageView.heightAnchor.constraint(equalToConstant: 200),
         ])
 

@@ -13,6 +13,9 @@ class AdListViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     var adListViewModel: AdListViewModel!
     let tableView = UITableView()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -22,18 +25,20 @@ class AdListViewController: UIViewController {
         adListViewModel.configureAdListViewModel()
         closureSetup ()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
     /// configure tableview
     func configureTableView () {
-        let safeArea = view.safeAreaLayoutGuide
         view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-          tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
-          tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-          tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor),
-          tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+            tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+          tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+          tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+          tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         tableView.register(AdCell.self, forCellReuseIdentifier: "AdCell")
     }
@@ -46,7 +51,7 @@ class AdListViewController: UIViewController {
     
     /// Present SelectCategoryViewController
     @objc func presentSelectCategoryVC (){
-        coordinator?.presentSelectCategoryVC(categories: adListViewModel.categories)
+        coordinator?.presentSelectCategoryVC(categories: adListViewModel.categories, selectedCategory: adListViewModel.selectedCategory)
     }
     /// execute closure to update View with ViwModel
     func closureSetup() {
@@ -70,6 +75,7 @@ extension AdListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdCell", for: indexPath) as! AdCell
         cell.configureCell(viewModel: adListViewModel.adsViewModel[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

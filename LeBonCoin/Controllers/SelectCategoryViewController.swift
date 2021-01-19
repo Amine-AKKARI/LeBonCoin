@@ -22,8 +22,6 @@ class SelectCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let allCategory = AdCategory(categoryId: 0, categoryName: "Toutes les categories")
-        categories.insert(allCategory, at: 0)
         configureNavigationBar()
         configureTableView()
     }
@@ -49,16 +47,15 @@ class SelectCategoryViewController: UIViewController {
     
     /// Configure table view
     func configureTableView () {
-        let safeArea = view.safeAreaLayoutGuide
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+            tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")
     }
@@ -88,18 +85,14 @@ extension SelectCategoryViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         cell.textLabel?.text = categories[indexPath.row].categoryName
+        cell.accessoryType = (categories[indexPath.row].categoryId == selectedCategory?.categoryId) ? .checkmark : .none
       return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = .none
-        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
             selectedCategory = categories[indexPath.row]
+            tableView.reloadData()
         }
     }
 }

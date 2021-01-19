@@ -69,6 +69,7 @@ class AdListViewModel {
     var categories: [AdCategory] = [] {
         didSet {
             getAds()
+            categories.insert(selectedCategory, at: 0)
         }
     }
     var sortedAdsViewModel : [AdViewModel] = []
@@ -78,6 +79,7 @@ class AdListViewModel {
             reloadList()
         }
     }
+    var selectedCategory = AdCategory(categoryId: 0, categoryName: "Toutes les categories")
     var reloadList = {() -> () in }
     /**
      AdListViewModel Constructor
@@ -123,7 +125,6 @@ extension AdListViewModel {
                     self.adsViewModel = tempViewModel
                     self.copyAdViewModel = self.adsViewModel
                 }
-                
             case .failure(let error):
                 print("the error \(error)")
             }
@@ -165,6 +166,7 @@ extension AdListViewModel {
 extension AdListViewModel: SelectCategoryDelegate {
     func didSelectcategory(category: AdCategory) {
         self.adsViewModel = self.copyAdViewModel
+        self.selectedCategory = category
         if (category.categoryId != 0) {
             self.adsViewModel = self.adsViewModel.filter {adViewModel in
                 return adViewModel.categoryName == category.categoryName

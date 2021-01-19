@@ -36,11 +36,12 @@ class MainCoordinator: Coordinator {
      Present SelectCategoryViewController
      - Parameter categories: [AdCategories] Array of categories
      */
-    func presentSelectCategoryVC(categories: [AdCategory]) {
+    func presentSelectCategoryVC(categories: [AdCategory], selectedCategory: AdCategory) {
         let vc = SelectCategoryViewController()
         vc.coordinator = self
         vc.delegate = presenter.adListViewModel
         vc.categories = categories
+        vc.selectedCategory = selectedCategory
         let navController = UINavigationController(rootViewController: vc)
         presenter.present(navController, animated:true, completion: nil)
     }
